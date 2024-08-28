@@ -143,7 +143,6 @@
     postman
 
     vscode-langservers-extracted
-    vscode-js-debug
 
     nil
     alejandra
