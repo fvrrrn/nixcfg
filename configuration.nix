@@ -49,6 +49,13 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  services.displayManager.ly.enable = true;
+  services.displayManager.ly.settings = {
+    animation = "matrix";
+  };
+  # windowManager.dwm.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+
   # Configure keymap in X11
   services.xserver = {
     enable = true;
@@ -61,17 +68,14 @@
       ];
     };
 
-    # windowManager.dwm.enable = true;
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-
     desktopManager = {
       xterm.enable = false;
     };
-    layout = "us,ru";
-    xkbVariant = "";
-    xkbOptions = "grp:ctrl_space_toggle,caps:escape";
+    xkb = {
+      layout = "us,ru";
+      variant = "";
+      options = "grp:ctrl_space_toggle,caps:escape";
+    };
   };
 
   services.unclutter.enable = true;
@@ -136,6 +140,7 @@
     lua-language-server
     nodePackages.typescript-language-server
     typescript
+    postman
 
     vscode-langservers-extracted
 
