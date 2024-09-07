@@ -56,6 +56,17 @@
   # windowManager.dwm.enable = true;
   services.displayManager.defaultSession = "none+i3";
 
+  # services.postgresql = {
+  #   enable = true;
+  #   ensureDatabases = ["mydatabase"];
+  #   authentication = pkgs.lib.mkOverride 10 ''
+  #     #type database  DBuser  auth-method
+  #     local all       all     trust
+  #   '';
+  # };
+
+  programs.firefox.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     enable = true;
@@ -91,14 +102,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      openvpn = prev.openvpn.override {
-        openssl = prev.openssl_legacy;
-      };
-    })
-  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
