@@ -123,7 +123,11 @@
     yazi
     kitty
     btop
+
     anydesk
+    freerdp
+    remmina
+
     nodejs
     yarn
     gcc
@@ -156,6 +160,8 @@
     stylua
     pass
     pinentry-curses
+
+    tree
   ];
 
   services.xl2tpd.enable = true;
